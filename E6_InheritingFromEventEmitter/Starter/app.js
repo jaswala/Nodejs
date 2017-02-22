@@ -8,17 +8,17 @@ function Greetr() {
 
 util.inherits(Greetr, EventEmitter);
 
-Greetr.prototype.greet= function() {
+Greetr.prototype.greet= function(data) {
 
-    console.log(this.greeting);
-    this.emit('greet');
+    console.log(this.greeting + ': ' + data);
+    this.emit('greet', data);
 
 }
 
 var greetr1 = new Greetr();
 
- greetr1.on('greet', function() { 
-    console.log('Someone greeted!')
+ greetr1.on('greet', function(data) { 
+    console.log('Someone greeted! ' + data )
 });
 
-greetr1.greet();
+greetr1.greet('Tony');
