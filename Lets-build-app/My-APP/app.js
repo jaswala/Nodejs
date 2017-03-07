@@ -14,6 +14,7 @@ app.use('/assets', express.static(__dirname + '/public'));
 app.set('view engine','ejs');
 
 //mongoose.connect(config.getDbConnectionString());
+//mongoose.connect('mongodb://127.0.0.1:27017'); // for local mongod
 mongoose.connect('mongodb://test:test@ds025583.mlab.com:25583/nodetodosample-aj');
 setupController(app);
 apiController(app);
